@@ -48,10 +48,14 @@ export const Timer = (props) => {
         return `${minutes}:${seconds}`;
     }
 
+    const line = `${time * 100 / props.time}%`;
+
+
     return(
         <div>
             <div> {clock(time)} </div>
-            <button onClick={toggle} > { active ? 'stop' : 'start'} </button>
+            <button onClick={toggle}> { active ? 'stop' : 'start'} </button>
+            <div style={{width: line}} className="line"></div>
         </div>
     )
 }
